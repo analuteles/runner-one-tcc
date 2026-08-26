@@ -1,0 +1,15 @@
+# Dependências do backend do Runner One.
+#
+# Versões conferidas em 26/08/2026. O projeto usa Django 5.2 LTS (não a
+# versão mais recente, 6.1) porque é a LTS atualmente ativa — suporte
+# de segurança garantido por mais tempo, o que é mais adequado para um
+# projeto de TCC que pode ser retomado ao longo de vários meses. Vale
+# lembrar: o Django 4.2 LTS (comum em tutoriais mais antigos) já saiu
+# de suporte em abril de 2026 — evite usá-lo em um projeto novo.
+
+Django>=5.2,<6.0
+djangorestframework>=3.16,<3.18
+django-filter>=24.0,<26.0
+
+# Descomente a linha abaixo quando o time decidir migrar de SQLite para PostgreSQL:
+# psycopg2-binary>=2.9,<3.0
