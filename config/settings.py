@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',  # Permite CORS (Cross-Origin Resource Sharing) para o frontend consumir a API
 
     # Bibliotecas de terceiros
     'rest_framework',
@@ -73,6 +74,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -185,6 +187,10 @@ REST_FRAMEWORK = {
     ],
 }
 
+CORS_ALLOWED_ORIGINS = [
+    "http://127.0.0.1:5500",
+    "http://localhost:5500",
+]
 # Observação: não usamos um EXCEPTION_HANDLER customizado de propósito.
 # O comportamento padrão do DRF já devolve {"detail": "mensagem"} sempre
 # que uma view levanta `serializers.ValidationError("mensagem")` com uma
